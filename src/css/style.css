@@ -16,3 +16,7 @@ html, body {
 p{
     margin-bottom: 0;
 }
+.card{
+    width: 16rem;
+    padding: 0;
+}

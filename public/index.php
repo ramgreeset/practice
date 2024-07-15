@@ -15,11 +15,35 @@ $posts = [
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, quod!',
         'slug' => 'title-3'
     ],
+    4 => [
+        'title' => 'Title 4',
+        'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, quod!',
+        'slug' => 'title-4'
+    ],
 ];
 
+$recent_posts = [
+    1 => [
+        'title' => 'An item',
+        'slug' => lcfirst(str_replace(' ', '-', 'An item'))
+    ],
+    2 => [
+        'title' => 'A second item',
+        'slug' => lcfirst(str_replace(' ', '-', 'A second item'))
+    ],
+    3 => [
+        'title' => 'A third item',
+        'slug' => lcfirst(str_replace(' ', '-', 'A third item'))
+    ],
+    4 => [
+        'title' => 'A fourth item',
+        'slug' => lcfirst(str_replace(' ', '-', 'A fourth item'))
+    ],
+
+];
+
+
 ?>
-
-
 <!doctype html>
 
 <html" lang="en">
@@ -62,22 +86,36 @@ $posts = [
 
         <div class="container">
             <div class="row">
-                <div class="col-md-10">
+                <div class="col-md-8">
+                    <div class="row">
+                        <?php foreach ($posts as $post): ?>
 
-                    <?php foreach ($posts as $post): ?>
-
-                        <a href="$post/<?= $post['slug'] ?>" class="card mb-3" style="width: 18rem;">
-                            <img src="https://cdn.tripster.ru/thumbs2/f5a8c1fe-b128-11ed-9e63-2e5ef03bee8d.1220x600.jpeg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title"><?= $post['title'] ?></h5>
-                                <p class="card-text"><?= $post['description'] ?></p>
+                            <div class="col-md-4">
+                                <a href="$post/<?= $post['slug'] ?>" class="card mb-3"">
+                                <img src="https://cdn.tripster.ru/thumbs2/f5a8c1fe-b128-11ed-9e63-2e5ef03bee8d.1220x600.jpeg"
+                                     class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title"><?= $post['title'] ?></h5>
+                                    <p class="card-text"><?= $post['description'] ?></p>
+                                </div>
+                                </a>
                             </div>
-                        </a>
-                    <?php endforeach; ?>
 
+                        <?php endforeach; ?>
+                    </div>
                 </div>
-                <div class="col-md-2">
-                    sidebar
+                <div class="col-md-4">
+                    <h3>Recent Posts</h3>
+
+                    <ul class="list-group">
+                        <?php foreach ($recent_posts as $recent_post): ?>
+                            <li class="list-group-item">
+                                <a href="<?= $recent_post['slug'] ?>">
+                                    <?= $recent_post['title'] ?>
+                                </a>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
                 </div>
             </div>
         </div>
