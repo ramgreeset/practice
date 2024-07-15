@@ -1,5 +1,9 @@
 <?php
 
+define("MYAPP", true);
+
+require_once '../funcs.php';
+
 $title = 'My Blog : : Home';
 $posts = [
     1 => [
