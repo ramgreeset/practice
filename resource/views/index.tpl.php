@@ -11,7 +11,7 @@
                         <?php foreach ($posts as $post): ?>
 
                             <div class="col-md-4">
-                                <a href="$post/<?= $post['slug'] ?>" class="card mb-3"">
+                                <a href="post/<?= $post['slug'] ?>" class="card mb-3"">
                                 <img src="https://cdn.tripster.ru/thumbs2/f5a8c1fe-b128-11ed-9e63-2e5ef03bee8d.1220x600.jpeg"
                                      class="card-img-top" alt="...">
                                 <div class="card-body">
@@ -43,11 +43,6 @@
     </main>
 
     <?php require_once VIEWS . '/inc/footer.tpl.php';?>
-</div>
 
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
 </body>
 </html>

@@ -7,8 +7,16 @@ define('APP', ROOT . '/app');
 define('RESOURCE', ROOT . '/resource');
 define('CONTROLLERS', APP . '/Controllers');
 define('VIEWS', RESOURCE . '/views');
-define('PATH', ROOT . 'http://practice');
+define('PATH', 'http://practice');
 
 require CORE . '/funcs.php';
 
-require_once CONTROLLERS . '/index.php';
+$uri = trim($_SERVER['REQUEST_URI'], '/');
+
+if ($uri === '') {
+    require_once CONTROLLERS . '/index.php';
+} elseif ($uri === 'about') {
+    require_once CONTROLLERS . '/about.php';
+}else {
+    abort();
+}

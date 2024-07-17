@@ -22,4 +22,4 @@ $recent_posts = [
 
 ];
 
-require_once VIEWS . '/inc/footer.tpl.php';
+require_once VIEWS . '/about.tpl.php';

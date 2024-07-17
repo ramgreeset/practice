@@ -1,13 +1,21 @@
 <?php
 
-
-function dump($data){
+function dump($data)
+{
     echo "<pre>";
     var_dump($data);
     echo "</pre>";
 }
 
-function dd($data){
+function dd($data)
+{
     dump($data);
+    die;
+}
+
+function abort($code = 404)
+{
+    http_response_code(404);
+    require_once VIEWS . "/errors/{$code}.tpl.php";
     die;
 }
