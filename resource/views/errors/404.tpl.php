@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="row">
-                        <h1>Поворот не туда !</h1>
+                        <h1>404 - Поворот не туда !</h1>
                     </div>
                 </div>
             </div>

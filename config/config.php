@@ -9,3 +9,4 @@ define('CONTROLLERS', APP . '/Controllers');
 define('VIEWS', RESOURCE . '/views');
 define('PATH', 'http://practice');
 define('CONFIG', ROOT . '/config');
+
