@@ -3,6 +3,7 @@
 class Db
 {
     private $connection;
+    private $statement;
 
     public function __construct(array $db_config)
     {
@@ -18,9 +19,11 @@ class Db
 
     public function query($query)
     {
-        $stmt = $this->connection->prepare($query);
-        $stmt->execute();
-        return $stmt;
+        $this->statement = $this->connection->prepare($query);
+        $this->statement->execute();
+        return $this;
     }
-
+    public function findAll(){
+        return 'test';
+    }
 }
